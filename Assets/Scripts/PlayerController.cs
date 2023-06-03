@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float basespeed=5.0f;
+    public float basespeed=3.0f;
     public float speed;
     public float speeddown;
     // Start is called before the first frame update
@@ -22,24 +22,24 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         
 
-        if (Input.GetKey("left"))
+        if (Input.GetKey(KeyCode.A))
         {
             position.x -= speed;
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKey(KeyCode.D))
         {
             position.x += speed;
         }
-        if (Input.GetKey("up"))
+        if (Input.GetKey(KeyCode.W))
         {
             position.y += speed;
         }
-        if (Input.GetKey("down"))
+        if (Input.GetKey(KeyCode.S))
         {
             position.y -= speed;
         }
 
-        if (Input.GetKey("Space"))
+        if (Input.GetKey(KeyCode.Space))
         {
             speed=speeddown;
         }
