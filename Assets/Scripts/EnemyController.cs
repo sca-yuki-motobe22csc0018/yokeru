@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField]
-    [Tooltip("対象物(向く方向)")]
     private GameObject target;
 
     GameObject obstaclePrefab;
@@ -20,15 +18,19 @@ public class EnemyController : MonoBehaviour
         this.transform.rotation = quaternion;
     }
 
-
-
-
     private void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        if (transform.position.x > 10 || transform.position.x < -10 || transform.position.y < -10 || transform.position.y > 10)
+        if (transform.position.x > 6 || transform.position.x < -6 || transform.position.y < -6 || transform.position.y > 6)
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+        }
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            this.gameObject.SetActive(false);
         }
     }
 }
