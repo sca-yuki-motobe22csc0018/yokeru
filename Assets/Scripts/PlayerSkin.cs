@@ -17,4 +17,6 @@ public class PlayerSkin : MonoBehaviour
     {
         transform.position=new Vector2(pc.transform.position.x,pc.transform.position.y);
     }
+
+    
 }

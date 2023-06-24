@@ -26,11 +26,5 @@ public class EnemyController : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            this.gameObject.SetActive(false);
-        }
-    }
+    
 }
