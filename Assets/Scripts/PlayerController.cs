@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public Text ScoreText;
     public Text GameOver;
-    
+    public Text GameOverText;
+
     int Score=0;
     public GameObject[] lifeArray = new GameObject[10];
     private int lifePoint;
@@ -30,9 +31,11 @@ public class PlayerController : MonoBehaviour
         audioSource=GetComponent<AudioSource>();
 
         ScoreText.text = "";
+        
         Score = 0;
         lifePoint = 10;
         GameOver.enabled = false;
+        GameOverText.enabled = false;
 
     }
     //SetActive(true)
@@ -85,6 +88,7 @@ public class PlayerController : MonoBehaviour
         if (lifePoint <= 0)
         {
             GameOver.enabled = true;
+            GameOverText.enabled = true;
             transform.position = new Vector2(0, 0);
             //this.gameObject.SetActive(false);
             if (Input.GetKeyDown(KeyCode.Space))
