@@ -15,8 +15,9 @@ public class SpawnManager : MonoBehaviour
     private Vector3 spawnPosG = new Vector3(-5, 0, 0);
     private Vector3 spawnPosH = new Vector3(0, -5, 0);
     private float startDelay = 0;
-    public float repeatRate = 0.5f;
+    public float repeatRate = 1.5f;
     private PlayerController pc;
+    private float Timer=0;
 
     void Start()
     {

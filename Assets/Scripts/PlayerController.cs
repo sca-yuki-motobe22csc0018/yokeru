@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public Text ScoreText;
     public Text GameOver;
     public Text GameOverText;
+    public Text GameOverS;
+    public Text GameOverTextS;
 
     int Score=0;
     public GameObject[] lifeArray = new GameObject[10];
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
         lifePoint = 10;
         GameOver.enabled = false;
         GameOverText.enabled = false;
+        GameOverS.enabled = false;
+        GameOverTextS.enabled = false;
 
     }
     //SetActive(true)
@@ -89,6 +93,8 @@ public class PlayerController : MonoBehaviour
         {
             GameOver.enabled = true;
             GameOverText.enabled = true;
+            GameOverS.enabled = true;
+            GameOverTextS.enabled = true;
             transform.position = new Vector2(0, 0);
             //this.gameObject.SetActive(false);
             if (Input.GetKeyDown(KeyCode.Space))
